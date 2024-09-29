@@ -51,4 +51,4 @@ volumes:
   config:
     driver: local
 options:
-     logging: CLOUD_LOGGING_ONLY
+     logging: NONE
