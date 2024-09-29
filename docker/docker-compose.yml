@@ -1,4 +1,6 @@
 version: "3.3"
+options:
+  defaultLogsBucketBehavior: CLOUD_LOGGING_ONLY
 services:
   httpd:
     container_name: apache
