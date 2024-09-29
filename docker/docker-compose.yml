@@ -20,8 +20,8 @@ services:
       - "./tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml"
       - "./web.xml:/usr/local/tomcat/webapps/orbeon/WEB-INF/web.xml"
       - "./properties-local.xml:/usr/local/tomcat/webapps/orbeon/WEB-INF/resources/config/properties-local.xml"
-    options:
-      logging: CLOUD_LOGGING_ONLY
+  options:
+    logging: CLOUD_LOGGING_ONLY
   solr:
     container_name: solr
     image: solr:8.6.2
@@ -46,8 +46,8 @@ services:
       - type: volume
         source: config
         target: /exist/config
-        options:
-           logging: CLOUD_LOGGING_ONLY
+  options:
+    logging: CLOUD_LOGGING_ONLY
 volumes:
   data:
     driver: local
