@@ -7,8 +7,9 @@ services:
       - "80:80"
     volumes:
       - "./httpd.conf:/usr/local/apache2/conf/httpd.conf"
-      logging:
-        options: CLOUD_LOGGING_ONLY
+    logging:
+      options:
+        mode: CLOUD_LOGGING_ONLY
   orbeon:
     container_name: orbeon
     image: tiredofit/orbeon:latest
@@ -22,8 +23,9 @@ services:
       - "./tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml"
       - "./web.xml:/usr/local/tomcat/webapps/orbeon/WEB-INF/web.xml"
       - "./properties-local.xml:/usr/local/tomcat/webapps/orbeon/WEB-INF/resources/config/properties-local.xml"
-      logging:
-        options: CLOUD_LOGGING_ONLY
+    logging:
+      options:
+        mode: CLOUD_LOGGING_ONLY
   solr:
     container_name: solr
     image: solr:8.6.2
@@ -36,7 +38,8 @@ services:
       - solr-precreate
       - gettingstarted
     logging:
-      options: CLOUD_LOGGING_ONLY
+      options:
+        mode: CLOUD_LOGGING_ONLY
   exist:
     image: existdb/existdb:5.2.0
     container_name: exist
@@ -51,7 +54,8 @@ services:
         source: config
         target: /exist/config
     logging:
-     options: CLOUD_LOGGING_ONLY
+      options:
+        mode: CLOUD_LOGGING_ONLY
 volumes:
   data:
     driver: local
